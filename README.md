@@ -285,61 +285,60 @@ The specification also outlines the requirements for the analyst's response, inc
 ---
 
 
-### Developer Content
+## Developer Content
 
-#### Images Directory Structure
+### Images Directory Structure
 
 The following images are organized under the `images` directory. Each image has been described with its purpose and location within the directory structure.
 
-### 1. Console Testing Single Image
+#### 1. Console Testing Single Image
 
-- **Description**: This is a single image used for console testing.
-- **Location**: `images/console-testing-single-image.png`
+- **Description**: A single image used for console testing.
+- **Location**: [Console Testing Single Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
 
-### 2. Image Result Overview
+#### 2. Image Result Overview
 
-- **Description**: This image provides an overview of the results of various tests or experiments.
-- **Location**: `images/image-result-overview.png`
+- **Description**: Provides an overview of the results of various tests or experiments.
+- **Location**: [Image Result Overview](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
 
-### 3. Test Directory
+#### 3. Test Directory
 
 The `test` directory contains several test-related images.
 
-#### 3.1 Fucked-Up Logo
+##### 3.1 Fucked-Up Logo
 
 - **Description**: A logo that appears to be broken or corrupted.
-- **Location**: `images/test/fucked-up-logo.png`
+- **Location**: [Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
 
-#### 3.2 Real 001 Photoshoot Text on Wall
+##### 3.2 Real 001 Photoshoot Text on Wall
 
 - **Description**: A photograph of a real shoot with text on the wall.
-- **Location**: `images/test/real-001-photoshoot-text-on-wall.png`
+- **Location**: [Real 001 Photoshoot Text on Wall](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
 
-#### 3.3 Trump Walker Gemini AI WebP
+##### 3.3 Trump Walker Gemini AI WebP
 
 - **Description**: An image featuring Trump, Walker, and Gemini AI in a web format.
-- **Location**: `images/test/trump_walker_gemini_ai.webp`
+- **Location**: [Trump Walker Gemini AI WebP](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
 
-#### 3.4 Logo
+##### 3.4 Logo
 
 - **Description**: The main logo used across the project.
-- **Location**: `images/test/logo.png`
+- **Location**: [Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
 
-#### 3.5 Screenshot of Landacape Monoglype Photo
+##### 3.5 Screenshot of Landscape Monoglype Photo
 
 - **Description**: A screenshot of a landscape photo featuring monoglype imagery.
-- **Location**: `images/test/screenshot-of-landacape-monoglype-photo.jpeg`
+- **Location**: [Screenshot of Landscape Monoglype Photo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
 
-#### 3.6 Crude Trump AI Portrait
+##### 3.6 Crude Trump AI Portrait
 
 - **Description**: An image of a crude portrait of Donald Trump using AI.
-- **Location**: `images/test/crude-trup-ai-portrait.jpg`
+- **Location**: [Crude Trump AI Portrait](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
 
-### 4. Landing Page Image
+#### 4. Landing Page Image
 
 - **Description**: The main landing page image used for the project's homepage.
-- **Location**: `images/landing.png`
-
+- **Location**: [Landing Page Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
 
 ## Disclaimer
 
