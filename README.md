@@ -1,3 +1,6 @@
+correct and improve README.md  while simplyfing
+
+
 # Real or AI
 
 ## About Real or AI
@@ -61,7 +64,6 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 **Action**: Based on the description and detected objects from the scene analysis, make a determination about whether the image is real or AI-generated.
 
 
-# code
 
 **Modules and Structure**
 =====================================================
@@ -231,25 +233,14 @@ export default {
 - **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
 
 
+---
 
-## Note: Replace `http://localhost:11434` with the actual URL of your Ollama API.+
+## Note:
+
+- Replace `http://localhost:11434` with the actual URL of your Ollama API.
 
 
 ---
-
-## Prompt Flow
-
-
-**Modules and Structure**
-
-The codebase consists of several modules, each responsible for a specific aspect of the analysis:
-
-1. **`image-forensics.js`**: The main entry point of the tool.
-2. **`utils.js`**: Provides utility functions for image processing and analysis.
-3. **`text-analysis.js`**: Analyzes text and logo signals in the image.
-4. **`watermark-detection.js`**: Detects watermarks and steganographic signals in the image.
-5. **`exif-parser.js`**: Parses EXIF metadata from the image file.
-6. **`edge-detection.js`**: Analyzes edge detection artifacts in the image.
 
 **Analysis Flow**
 
@@ -291,6 +282,7 @@ The specification also outlines the requirements for the analyst's response, inc
 5. **Breakdown**: The analyst must provide an object containing all 26 scores, with each score using a 0-100 scale.
 6. **Flagged regions**: The analyst must identify 2-5 suspicious areas, with each region described using a specific category and label.
 
+---
 
 ## Disclaimer
 
