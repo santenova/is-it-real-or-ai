@@ -60,6 +60,43 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 ```
 **Action**: Based on the description and detected objects from the scene analysis, make a determination about whether the image is real or AI-generated.
 
+
+# code
+
+**Modules and Structure**
+=====================================================
+
+
+The codebase is organized into several modules, each responsible for specific aspects of the application. Here's a breakdown of the key components:
+
+### **src/api/**
+- **client.js**: Manages API requests and responses. This module handles communication with external services or APIs, ensuring data retrieval and submission are handled efficiently.
+
+### **src/lib/**
+- **AuthContext.jsx**: Provides authentication context for managing user sessions and access control across the application.
+- **PageNotFound.jsx**: Displays a custom 404 page when users attempt to navigate to a non-existent route.
+- **ThemeContext.jsx**: Manages theme settings, allowing users to switch between light and dark modes seamlessly.
+- **analysisLogger.js**: Logs analysis activities for debugging and auditing purposes. This helps in tracking the flow of data and identifying potential issues.
+- **app-params.js**: Contains application-wide parameters that can be accessed across different modules, ensuring consistency.
+- **localStore.js**: Interfaces with local storage to save user settings or temporary data without relying on a server.
+- **pdfReport.js**: Generates PDF reports based on analysis results. This module is crucial for exporting findings in a standard format.
+- **query-client.js**: Manages query caching and optimization, improving the performance of data retrieval operations.
+- **utils.js**: A collection of utility functions used throughout the application, covering various tasks like date formatting, string manipulation, etc.
+
+### **src/pages/**
+- **About.jsx**: Displays information about the application, its features, and possibly credits to contributors.
+- **Admin.jsx**: Provides administrative functionalities, such as managing user permissions or system settings. This module is typically accessible only to authorized users.
+- **AnalysisLogs.jsx**: Shows logs of previous analyses, helping users review past work and track progress.
+- **BrowserPlugin.jsx**: Manages interactions with browser plugins, enhancing the application's capabilities by integrating external tools.
+- **Compare.jsx**: Allows users to compare different analysis results side-by-side, aiding in detailed examination and decision-making.
+- **Examples.jsx**: Demonstrates various use cases or provides sample data for users to explore and understand the application better.
+- **History.jsx**: Keeps a record of user activities within the application, offering insights into past interactions.
+- **Home.jsx**: Serves as the landing page, providing an overview of available features and navigation options.
+- **Settings.jsx**: Manages user settings, allowing customization of preferences such as notifications, display settings, etc.
+
+---
+
+
 ### Final Verdict
 
 After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from reverse search results, watermark detection, image type classification, scene analysis, and description verification.
