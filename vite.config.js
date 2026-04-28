@@ -18,6 +18,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/proxy/, ''),
       },
+      '/custom': {
+        target: 'https://www.google.com/search', // Cujstom client endpoint
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/custom/, ''),
+      },
     },
   },
 });

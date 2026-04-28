@@ -25,8 +25,8 @@ const localStub = {
   }),
   integrations: {
     Core: {
-      InvokeLLM: async () => { throw new Error("InvokeLLM unavailable in local mode"); },
-      UploadFile: async () => { throw new Error("UploadFile unavailable in local mode"); },
+      InvokeLLM: async () => {  },
+      UploadFile: async () => {  },
       SendEmail: async () => {},
       GenerateImage: async () => {},
       ExtractDataFromUploadedFile: async () => {},
@@ -43,8 +43,8 @@ const localStub = {
   },
 };
 
-// Real API client implementation
-const realApiClient = {
+// Custom API client implementation
+const customApiClient = {
   auth: {
     me: async () => null,
     isAuthenticated: async () => false,
@@ -114,10 +114,10 @@ function dumpLocalStorageAsTable() {
     const value = localStorage.getItem(key);
     table += `\n| ${key} | ${value} |`;
   });
-
+  console.log(localStorage);
   console.log(table);
 }
 
 dumpLocalStorageAsTable();
 
-export const apiClient = _local ? localStub : realApiClient;
+export const apiClient = _local ? localStub : customApiClient;
