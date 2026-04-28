@@ -302,9 +302,9 @@ The main landing page image used for the project's homepage. [View full resoluti
 
 The `test` directory contains several test-related images.
 
-##### 2.1 Fucked-Up Logo
+##### 2.1 Broken Logo
 
-[![Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png)
+[![Broken Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png)
 
 A logo that appears to be broken or corrupted. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png)
 
