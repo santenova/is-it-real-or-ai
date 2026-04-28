@@ -119,7 +119,7 @@ export default {
 - **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the model server to allow requests from your frontend domain or using a reverse proxy.
 
 - **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
-```
+
 
 
 ## Note: Replace `http://localhost:11434` with the actual URL of your Ollama API.+
