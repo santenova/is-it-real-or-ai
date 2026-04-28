@@ -72,36 +72,36 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 The codebase is organized into several modules, each responsible for specific aspects of the application. Here's a breakdown of the key components:
 
 ### **src/api/**
-- **[client.js](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/src/api/client.js)**: Manages API requests and responses. This module handles communication with external services or APIs, ensuring data retrieval and submission are handled efficiently.
+- **[client.js](src/api/client.js)**: Manages API requests and responses. This module handles communication with external services.
 
 ### **src/lib/**
-- **AuthContext.jsx**: Provides authentication context for managing user sessions and access control across the application.
-- **PageNotFound.jsx**: Displays a custom 404 page when users attempt to navigate to a non-existent route.
-- **ThemeContext.jsx**: Manages theme settings, allowing users to switch between light and dark modes seamlessly.
-- **analysisLogger.js**: Logs analysis activities for debugging and auditing purposes. This helps in tracking the flow of data and identifying potential issues.
-- **app-params.js**: Contains application-wide parameters that can be accessed across different modules, ensuring consistency.
-- **localStore.js**: Interfaces with local storage to save user settings or temporary data without relying on a server.
-- **pdfReport.js**: Generates PDF reports based on analysis results. This module is crucial for exporting findings in a standard format.
-- **query-client.js**: Manages query caching and optimization, improving the performance of data retrieval operations.
-- **utils.js**: A collection of utility functions used throughout the application, covering various tasks like date formatting, string manipulation, etc.
+- **[AuthContext.jsx](src/lib/AuthContext.jsx)**: Provides authentication context for managing user sessions and access control across the application.
+- **[PageNotFound.jsx](src/lib/PageNotFound.jsx)**: Displays a custom 404 page when users attempt to navigate to a non-existent route.
+- **[ThemeContext.jsx](src/lib/ThemeContext.jsx)**: Manages theme settings, allowing users to switch between light and dark modes seamlessly.
+- **[analysisLogger.js](src/lib/analysisLogger.js)**: Logs analysis activities for debugging and auditing purposes. This helps in tracking the flow of data and identifying potential issues.
+- **[app-params.js](src/lib/app-params.js)**: Contains application-wide parameters that can be accessed across different modules, ensuring consistency.
+- **[localStore.js](src/lib/localStore.js)**: Interfaces with local storage to save user settings or temporary data without relying on a server.
+- **[pdfReport.js](src/lib/pdfReport.js)**: Generates PDF reports based on analysis results. This module is crucial for exporting findings in a standard format.
+- **[query-client.js](src/lib/query-client.js)**: Manages query caching and optimization, improving the performance of data retrieval operations.
+- **[utils.js](src/lib/utils.js)**: A collection of utility functions used throughout the application, covering various tasks like date formatting, string manipulation, etc.
 
 ### **src/pages/**
-- **About.jsx**: Displays information about the application, its features, and possibly credits to contributors.
-- **Admin.jsx**: Provides administrative functionalities, such as managing user permissions or system settings. This module is typically accessible only to authorized users.
-- **AnalysisLogs.jsx**: Shows logs of previous analyses, helping users review past work and track progress.
-- **BrowserPlugin.jsx**: Manages interactions with browser plugins, enhancing the application's capabilities by integrating external tools.
-- **Compare.jsx**: Allows users to compare different analysis results side-by-side, aiding in detailed examination and decision-making.
-- **Examples.jsx**: Demonstrates various use cases or provides sample data for users to explore and understand the application better.
-- **History.jsx**: Keeps a record of user activities within the application, offering insights into past interactions.
-- **Home.jsx**: Serves as the landing page, providing an overview of available features and navigation options.
-- **Settings.jsx**: Manages user settings, allowing customization of preferences such as notifications, display settings, etc.
+- **[About.jsx](src/pages/About.jsx)**: Displays information about the application, its features, and possibly credits to contributors.
+- **[Admin.jsx](src/pages/Admin.jsx)**: Provides administrative functionalities, such as managing user permissions or system settings. This module is typically accessible only to authorized users.
+- **[AnalysisLogs.jsx](src/pages/AnalysisLogs.jsx)**: Shows logs of previous analyses, helping users review past work and track progress.
+- **[BrowserPlugin.jsx](src/pages/BrowserPlugin.jsx)**: Manages interactions with browser plugins, enhancing the application's capabilities by integrating external tools.
+- **[Compare.jsx](src/pages/Compare.jsx)**: Allows users to compare different analysis results side-by-side, aiding in detailed examination and decision-making.
+- **[Examples.jsx](src/pages/Examples.jsx)**: Demonstrates various use cases or provides sample data for users to explore and understand the application better.
+- **[History.jsx](src/pages/History.jsx)**: Keeps a record of user activities within the application, offering insights into past interactions.
+- **[Home.jsx](src/pages/Home.jsx)**: Serves as the landing page, providing an overview of available features and navigation options.
+- **[Settings.jsx](src/pages/Settings.jsx)**: Manages user settings, allowing customization of preferences such as notifications, display settings, etc.
 
 ---
 
 
 ### Final Verdict
 
-After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analysis stages.
+After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analyses.
 
 ```javascript
 const FINAL_VERDICT_PROMPT = `You are an expert image forensics analyst. Based on the following information:
@@ -120,7 +120,7 @@ Determine if this image is a real photograph or AI-generated.`;
 
 ## How It Works
 
-Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye, helping determine authenticity with high precision.
+Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye.
 
 ---
 
@@ -194,7 +194,7 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ## Overview
 
-To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to the backend API server.
+To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to your local Ollama API.
 
 ## Configuration
 
@@ -224,13 +224,13 @@ export default {
 
 - **`changeOrigin`**: When set to `true`, this option changes the origin of the request to match the target URL. This is often necessary to bypass CORS restrictions on the server side.
 
-- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives the correct request path.
+- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives the original path.
 
 ## Important Notes
 
-- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the target server to allow requests from your frontend domain.
+- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the server to accept requests from your frontend domain.
 
-- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose significant security risks.
+- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
 
 
 ---
@@ -286,7 +286,7 @@ The specification also outlines the requirements for the analyst's response, inc
 
 ## Disclaimer
 
-Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use this tool as part of a broader investigation and verification process.
+Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always verify critical findings through additional methods or professional human review when stakes are high.
 
 
 ---
