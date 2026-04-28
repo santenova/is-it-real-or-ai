@@ -62,7 +62,7 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 
 ### Final Verdict
 
-After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analysis steps.
+After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from reverse search results, watermark detection, image type classification, scene analysis, and description verification.
 
 ```javascript
 const FINAL_VERDICT_PROMPT = `You are an expert image forensics analyst. Based on the following information:
@@ -75,11 +75,13 @@ const FINAL_VERDICT_PROMPT = `You are an expert image forensics analyst. Based o
 Determine if this image is a real photograph or AI-generated.`;
 ```
 
+
+
 ---
 
 ## How It Works
 
-Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye but reveal the true nature of the image's origin.
+Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye but indicative of AI manipulation.
 
 ---
 
@@ -153,7 +155,7 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ## Overview
 
-To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to your local model server (e.g., Ollama).
+To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to the model server running on `http://localhost:11434`.
 
 ## Configuration
 
@@ -183,30 +185,34 @@ export default {
 
 - **`changeOrigin`**: When set to `true`, this option changes the origin of the request to match the target URL. This is often necessary to bypass CORS restrictions on the server side.
 
-- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives the correct endpoint URL.
+- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives only the intended endpoint (e.g., `/api/data`).
 
 ## Important Notes
 
-- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the model server to accept requests from your frontend domain or using a reverse proxy like Nginx.
+- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the model server to allow requests from your frontend domain or using a reverse proxy.
 
-- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose serious security risks.
+- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
 
-## Note: Replace `http://localhost:11434` with the actual URL of your Ollama API.
+
+
+## Note: Replace `http://localhost:11434` with the actual URL of your Ollama API.+
+
 
 ---
 
 ## Prompt Flow
 
+
 **Modules and Structure**
 
 The codebase consists of several modules, each responsible for a specific aspect of the analysis:
 
-1. **[`image-forensics.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/image-forensics.js)**: The main entry point of the tool.
-2. **[`utils.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/utils.js)**: Provides utility functions for image processing and analysis.
-3. **[`text-analysis.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/text-analysis.js)**: Analyzes text and logo signals in the image.
-4. **[`watermark-detection.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/watermark-detection.js)**: Detects watermarks and steganographic signals in the image.
-5. **[`exif-parser.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/exif-parser.js)**: Parses EXIF metadata from the image file.
-6. **[`edge-detection.js`](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/main/edge-detection.js)**: Analyzes edge detection artifacts in the image.
+1. **`image-forensics.js`**: The main entry point of the tool.
+2. **`utils.js`**: Provides utility functions for image processing and analysis.
+3. **`text-analysis.js`**: Analyzes text and logo signals in the image.
+4. **`watermark-detection.js`**: Detects watermarks and steganographic signals in the image.
+5. **`exif-parser.js`**: Parses EXIF metadata from the image file.
+6. **`edge-detection.js`**: Analyzes edge detection artifacts in the image.
 
 **Analysis Flow**
 
@@ -230,7 +236,6 @@ The tool returns a JSON object containing the following fields:
 * `breakdown`: An object containing all 26 scores and flags for each aspect of the analysis (e.g., texture consistency, lighting analysis).
 * `flagged_regions`: An array of suspicious areas in the image, including their position, size, category, and label.
 
-**Analysis Specifications**
 
 1. **Contextual analysis**: The analyst must consider the context in which the image was created, including the image type classification, paper trail, and watermark scan results.
 2. **Visual analysis**: The analyst must evaluate the image's visual characteristics, including texture, lighting, edges, noise, facial features, artifacts, geometry, color, and optical anomalies.
@@ -249,10 +254,10 @@ The specification also outlines the requirements for the analyst's response, inc
 5. **Breakdown**: The analyst must provide an object containing all 26 scores, with each score using a 0-100 scale.
 6. **Flagged regions**: The analyst must identify 2-5 suspicious areas, with each region described using a specific category and label.
 
----
 
 ## Disclaimer
 
-Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use this tool as part of a broader verification strategy and consult multiple sources when determining the authenticity of critical images.
+Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use critical thinking and consider multiple factors when evaluating image authenticity.
+
 
 ---
