@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { getAllSessions, clearAllSessions } from "../lib/analysisLogger";
 import { listAnalyses } from "../lib/localStore";
-import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, ChevronDown, ChevronRight, Clock, Terminal, CheckCircle2, FileJson, Copy, Database, RefreshCw, History, AlertTriangle, Link2Off, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";

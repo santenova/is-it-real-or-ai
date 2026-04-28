@@ -5,7 +5,6 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Separator } from "../../components/ui/separator";
 import { ShieldCheck, ShieldAlert, ShieldQuestion, FileText, Search, AlertTriangle, MapPin, Tag } from "lucide-react";
-import ExportPDFButton from "./ExportPDFButton";
 import ExportAnalysisButton from "./ExportAnalysisButton";
 import ScoreGauge from "./ScoreGauge";
 import ResultBreakdown from "./ResultBreakdown";

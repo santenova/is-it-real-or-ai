@@ -1,9 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { ScanEye, Info, Sparkles, History, Terminal, ChevronDown } from "lucide-react";
-import { useState } from "react";
 import { cn } from "../../lib/utils";
 import UserMenu from "./UserMenu";
-import { useAuth } from "../../lib/AuthContext";
 import LmsConfigPopover from "./LmsConfigPopover";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 

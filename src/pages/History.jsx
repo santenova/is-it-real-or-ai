@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   History as HistoryIcon, Search, ScanEye, Filter, Download,
-  CheckSquare, X, RefreshCw, Trash2, AlertTriangle
+  CheckSquare, X, RefreshCw, Trash2
 } from "lucide-react";
 import { listAnalyses, deleteAnalysis, clearAllAnalyses, subscribeToAnalyses } from "../lib/localStore";
 import { Input } from "../components/ui/input";

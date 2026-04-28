@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Loader2, Clock, XCircle, X, ShieldCheck, ShieldAlert, ShieldQuestion } from "lucide-react";
+import { Loader2, Clock, XCircle, X, ShieldCheck, ShieldAlert, ShieldQuestion } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { cn } from "../../lib/utils";
 import ExportQueueButton from "./ExportQueueButton";
