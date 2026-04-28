@@ -78,6 +78,55 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ---
 
+# Internal Proxy Setup
+
+## Overview
+
+To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to the model server running on `http://localhost:11434`.
+
+## Configuration
+
+The proxy is configured in the `vite.config.js` file as follows:
+
+```javascript
+// vite.config.js
+
+export default {
+  server: {
+    proxy: {
+      '/proxy': {
+        target: 'http://localhost:11434', // Replace with the actual Ollama API URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/proxy/, ''),
+      },
+    },
+  },
+};
+```
+
+### Key Configuration Options
+
+- **`/proxy`**: This is the prefix that will be used in your frontend requests to indicate that they should be proxied. For example, a request to `/proxy/api/data` will be forwarded to `http://localhost:11434/api/data`.
+
+- **`target`**: The URL of the model server where the requests should be forwarded. In this case, it is set to `http://localhost:11434`. You may need to update this URL if your model server is hosted elsewhere.
+
+- **`changeOrigin`**: When set to `true`, this option changes the origin of the request to match the target URL. This is often necessary to bypass CORS restrictions on the server side.
+
+- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives only the intended endpoint (e.g., `/api/data`).
+
+## Important Notes
+
+- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the model server to allow requests from your frontend domain or using a reverse proxy.
+
+- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
+```
+
+
+## Note: Replace `http://localhost:11434` with the actual URL of your Ollama API.+
+
+
+---
+
 ## Prompt Flow
 
 
