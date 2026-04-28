@@ -1,0 +1,23 @@
+================================================================================
+REAL OR AI — TEST RUN LOG
+================================================================================
+Paste console.table output here after each test run for regression tracking.
+
+Format:
+  [YYYY-MM-DD] model=<name>  accuracy=XX%  correct=N/30
+  ---------------------------------------------------------------
+  id      expected        actual          score   match  difficulty
+  ...
+================================================================================
+
+No runs recorded yet.
+
+To run:
+  1. Open app → Home page
+  2. Open browser DevTools console
+  3. Run:
+       const { runTests } = await import('/src/test/runner.js');
+       await runTests();
+  4. Copy the console.table output below the separator line above.
+
+================================================================================

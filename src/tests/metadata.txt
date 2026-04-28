@@ -1,0 +1,109 @@
+================================================================================
+REAL OR AI — TEST DATASET METADATA
+================================================================================
+Source repository : https://github.com/yavuzceliker/sample-images
+Direct URL pattern: https://yavuzceliker.github.io/sample-images/image-{N}.jpg
+License           : Pixabay Content License (modified images, freely shareable)
+Total test images : 30  (20 labeled "real", 10 labeled "ai_generated")
+Dataset purpose   : Benchmarking model verdict accuracy before live deployment
+Generated         : 2026-04-26
+================================================================================
+
+NOTE ON "ai_generated" LABELS:
+  The source repo is all Pixabay photos. Images labeled ai_generated here are
+  selected from high-numbered indices that tend to be heavily post-processed,
+  stylized, composited, or color-graded. They serve as hard edge-cases to stress
+  the forensic pipeline — not all are guaranteed to be algorithmically generated.
+  They test whether the model correctly identifies heavy manipulation/stylization
+  as non-photographic. Update labels in images.json after actual test runs.
+
+────────────────────────────────────────────────────────────────────────────────
+ID      LABEL         CATEGORY              IMAGE #   KEY SIGNALS
+────────────────────────────────────────────────────────────────────────────────
+t001    real          Nature / Landscape    image-1   noise_pattern, depth_of_field, texture_consistency
+t002    real          Animal / Wildlife     image-12  texture_consistency, depth_of_field, noise_pattern
+t003    real          Architecture          image-25  perspective_correctness, edge_detection, optical_anomalies
+t004    real          Food                  image-40  shadow_analysis, lighting_analysis, color_distribution
+t005    real          Portrait              image-55  facial_analysis, noise_pattern, background_consistency
+t006    real          Macro                 image-70  depth_of_field, noise_pattern, texture_consistency
+t007    real          Urban / Street        image-88  motion_blur, noise_pattern, lighting_analysis
+t008    real          Water / Ocean         image-101 optical_anomalies, color_distribution, background_consistency
+t009    real          Sky / Clouds          image-120 noise_pattern, color_distribution, lighting_analysis
+t010    real          Winter / Snow         image-135 shadow_analysis, lighting_analysis, texture_consistency
+t011    real          Forest / Nature       image-150 texture_consistency, depth_of_field, background_consistency
+t012    real          Sports / Action       image-165 motion_blur, shading_analysis, noise_pattern
+t013    real          Interior              image-180 perspective_correctness, shadow_analysis, optical_anomalies
+t014    real          Transport / Car       image-200 optical_anomalies, edge_detection, perspective_correctness
+t015    real          People / Crowd        image-222 facial_analysis, motion_blur, semantic_consistency
+t016    real          Night / Astro         image-240 noise_pattern, lighting_analysis, color_distribution
+t017    real          Flower / Garden       image-260 texture_consistency, depth_of_field, color_distribution
+t018    real          Children / Candid     image-280 facial_analysis, motion_blur, semantic_consistency
+t019    real          Aerial / Drone        image-300 scale_proportion, perspective_correctness, background_consistency
+t020    real          Abstract / Texture    image-321 texture_consistency, noise_pattern, clone_detection
+t021    ai_generated  Photorealistic Port.  image-500 facial_analysis, texture_consistency, ai_fingerprint
+t022    ai_generated  Fantasy / Surreal     image-600 semantic_consistency, contents_reality, lighting_analysis
+t023    ai_generated  Digital Illustration  image-700 artifact_detection, edge_detection, texture_consistency
+t024    ai_generated  Composite / Manip.    image-800 background_consistency, shadow_analysis, clone_detection
+t025    ai_generated  AI Color Graded       image-900 color_distribution, noise_pattern, watermark_integrity
+t026    ai_generated  AI Landscape          image-1000 clone_detection, semantic_consistency, texture_consistency
+t027    ai_generated  AI Abstract Art       image-1100 optical_anomalies, contents_reality, clone_detection
+t028    ai_generated  AI Nature Composite   image-1200 semantic_consistency, lighting_analysis, background_consistency
+t029    ai_generated  AI Portrait (styled)  image-1300 facial_analysis, texture_consistency, noise_pattern
+t030    ai_generated  AI Product / Comm.    image-1400 shadow_analysis, lighting_analysis, optical_anomalies
+
+────────────────────────────────────────────────────────────────────────────────
+SCORING KEY (per criterion, 0-100)
+────────────────────────────────────────────────────────────────────────────────
+  HIGH (70-100) → evidence of REAL / authentic photograph
+  MED  (40-69)  → ambiguous / insufficient signal
+  LOW  (0-39)   → evidence of AI-GENERATED / synthetic / manipulated
+
+  overall confidence_score = avg of all 26 criteria scores
+  verdict:  >= 60 → "real"  |  < 60 → "ai_generated"
+
+────────────────────────────────────────────────────────────────────────────────
+26 FORENSIC CRITERIA (used in breakdown)
+────────────────────────────────────────────────────────────────────────────────
+ 1. texture_consistency      — natural vs. AI-smooth/repetitive textures
+ 2. lighting_analysis        — physically plausible light sources
+ 3. edge_detection           — organic vs. unnaturally sharp/soft edges
+ 4. noise_pattern            — camera sensor noise vs. AI noise-free output
+ 5. facial_analysis          — real face micro-details vs. GAN symmetry
+ 6. metadata_integrity       — compression / origin marker authenticity
+ 7. color_distribution       — natural color histograms vs. AI uniformity
+ 8. artifact_detection       — malformed text / hands / geometry / seams
+ 9. shading_analysis         — shading consistent with light and object form
+10. depth_of_field           — physically realistic bokeh falloff
+11. motion_blur              — blur consistent with implied movement
+12. background_consistency   — foreground/background light & style match
+13. shadow_analysis          — correct shadow direction and intensity
+14. perspective_correctness  — realistic vanishing points and proportions
+15. compression_artifacts    — natural JPEG vs. suspicious patterns
+16. image_text_indication    — 100 = no text; penalised for AI-garbled text
+17. contents_reality         — physically plausible scene content
+18. ai_fingerprint           — GAN/diffusion frequency anomalies
+19. clone_detection          — repeated/copy-pasted patches
+20. scale_proportion         — correct relative object sizes
+21. optical_anomalies        — physically plausible reflections/distortions
+22. exif_manipulation        — EXIF timestamp/GPS/camera field consistency
+23. semantic_consistency     — all elements logically co-exist
+24. internet_presence        — found on credible sources vs. AI platforms
+25. watermark_integrity      — C2PA/SynthID/steganographic signals
+26. image_description_analysis — plausibility score from scene description
+
+────────────────────────────────────────────────────────────────────────────────
+HOW TO RUN
+────────────────────────────────────────────────────────────────────────────────
+1. Open the app → Home page (URL input mode)
+2. In browser DevTools console run:
+     const { runTests } = await import('/src/test/runner.js');
+     runTests();                          // all 30
+     runTests({ only: 'real' });          // real only
+     runTests({ only: 'ai' });            // AI only
+     runTests({ ids: ['t001','t021'] });  // specific
+3. Results auto-saved to localStorage["realai_test_results"]
+4. Copy console.table output into test/results.txt for tracking
+
+================================================================================
+END OF METADATA
+================================================================================

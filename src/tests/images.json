@@ -1,0 +1,312 @@
+[
+  {
+    "id": "t001",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Nature / Landscape",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["noise_pattern", "depth_of_field", "texture_consistency"],
+    "notes": "Pixabay landscape — authentic sensor noise, natural lighting gradients."
+  },
+  {
+    "id": "t002",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Animal / Wildlife",
+    "url": "https://yavuzceliker.github.io/sample-images/image-12.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["texture_consistency", "depth_of_field", "noise_pattern"],
+    "notes": "Wildlife shot — fur texture and background bokeh confirm authentic camera."
+  },
+  {
+    "id": "t003",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Architecture",
+    "url": "https://yavuzceliker.github.io/sample-images/image-25.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["perspective_correctness", "edge_detection", "optical_anomalies"],
+    "notes": "Building exterior — consistent vanishing points, authentic lens distortion."
+  },
+  {
+    "id": "t004",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Food",
+    "url": "https://yavuzceliker.github.io/sample-images/image-40.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["shadow_analysis", "lighting_analysis", "color_distribution"],
+    "notes": "Food photography — real surface imperfections, authentic highlight scatter."
+  },
+  {
+    "id": "t005",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Portrait",
+    "url": "https://yavuzceliker.github.io/sample-images/image-55.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["facial_analysis", "noise_pattern", "background_consistency"],
+    "notes": "Human portrait — micro-asymmetries and skin texture confirm real face."
+  },
+  {
+    "id": "t006",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Macro",
+    "url": "https://yavuzceliker.github.io/sample-images/image-70.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["depth_of_field", "noise_pattern", "texture_consistency"],
+    "notes": "Macro flower — authentic shallow DoF, real dew-drop refraction physics."
+  },
+  {
+    "id": "t007",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Urban / Street",
+    "url": "https://yavuzceliker.github.io/sample-images/image-88.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["motion_blur", "noise_pattern", "lighting_analysis"],
+    "notes": "Street scene — authentic pedestrian motion blur, ambient light variation."
+  },
+  {
+    "id": "t008",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Water / Ocean",
+    "url": "https://yavuzceliker.github.io/sample-images/image-101.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["optical_anomalies", "color_distribution", "background_consistency"],
+    "notes": "Ocean wave — authentic water caustics, natural blue color shift."
+  },
+  {
+    "id": "t009",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Sky / Clouds",
+    "url": "https://yavuzceliker.github.io/sample-images/image-120.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["noise_pattern", "color_distribution", "lighting_analysis"],
+    "notes": "Sunset sky — authentic atmospheric scattering, organic cloud formation."
+  },
+  {
+    "id": "t010",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Winter / Snow",
+    "url": "https://yavuzceliker.github.io/sample-images/image-135.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["shadow_analysis", "lighting_analysis", "texture_consistency"],
+    "notes": "Snow scene — authentic light diffusion, natural shadow softening."
+  },
+  {
+    "id": "t011",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Forest / Nature",
+    "url": "https://yavuzceliker.github.io/sample-images/image-150.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["texture_consistency", "depth_of_field", "background_consistency"],
+    "notes": "Forest path — real organic tree variation, authentic light filtering."
+  },
+  {
+    "id": "t012",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Sports / Action",
+    "url": "https://yavuzceliker.github.io/sample-images/image-165.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["motion_blur", "shading_analysis", "noise_pattern"],
+    "notes": "Sports action — authentic motion blur direction matches subject movement."
+  },
+  {
+    "id": "t013",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Interior",
+    "url": "https://yavuzceliker.github.io/sample-images/image-180.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["perspective_correctness", "shadow_analysis", "optical_anomalies"],
+    "notes": "Room interior — correct perspective, authentic ambient occlusion in corners."
+  },
+  {
+    "id": "t014",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Transport / Car",
+    "url": "https://yavuzceliker.github.io/sample-images/image-200.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["optical_anomalies", "edge_detection", "perspective_correctness"],
+    "notes": "Vehicle shot — authentic reflection physics in car body panels."
+  },
+  {
+    "id": "t015",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "People / Crowd",
+    "url": "https://yavuzceliker.github.io/sample-images/image-222.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["facial_analysis", "motion_blur", "semantic_consistency"],
+    "notes": "Crowd scene — natural face variety, authentic environmental depth."
+  },
+  {
+    "id": "t016",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Night / Astrophotography",
+    "url": "https://yavuzceliker.github.io/sample-images/image-240.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["noise_pattern", "lighting_analysis", "color_distribution"],
+    "notes": "Night shot — high ISO grain profile, natural city light bloom."
+  },
+  {
+    "id": "t017",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Flower / Garden",
+    "url": "https://yavuzceliker.github.io/sample-images/image-260.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["texture_consistency", "depth_of_field", "color_distribution"],
+    "notes": "Garden flower — real petal vein texture, authentic bokeh falloff."
+  },
+  {
+    "id": "t018",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Children / Candid",
+    "url": "https://yavuzceliker.github.io/sample-images/image-280.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["facial_analysis", "motion_blur", "semantic_consistency"],
+    "notes": "Candid children — unposed expressions, natural movement blur."
+  },
+  {
+    "id": "t019",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Aerial / Drone",
+    "url": "https://yavuzceliker.github.io/sample-images/image-300.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["scale_proportion", "perspective_correctness", "background_consistency"],
+    "notes": "Aerial view — correct scale relationships between ground elements."
+  },
+  {
+    "id": "t020",
+    "label": "real",
+    "category": "Photography",
+    "sub_type": "Abstract / Texture",
+    "url": "https://yavuzceliker.github.io/sample-images/image-321.jpg",
+    "expected_verdict": "real",
+    "key_signals": ["texture_consistency", "noise_pattern", "clone_detection"],
+    "notes": "Texture close-up — no repeated tile patterns, authentic material grain."
+  },
+  {
+    "id": "t021",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "Photorealistic Portrait",
+    "url": "https://yavuzceliker.github.io/sample-images/image-500.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["facial_analysis", "texture_consistency", "ai_fingerprint"],
+    "notes": "LIKELY modified/filtered Pixabay image — test if heavy post-processing triggers AI flags.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t022",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "Fantasy / Surreal",
+    "url": "https://yavuzceliker.github.io/sample-images/image-600.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["semantic_consistency", "contents_reality", "lighting_analysis"],
+    "notes": "Heavily stylized image — surreal composition signals.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t023",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "Digital Illustration",
+    "url": "https://yavuzceliker.github.io/sample-images/image-700.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["artifact_detection", "edge_detection", "texture_consistency"],
+    "notes": "Illustration-style image — synthetic edge smoothness signals.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t024",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "Composite / Manipulation",
+    "url": "https://yavuzceliker.github.io/sample-images/image-800.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["background_consistency", "shadow_analysis", "clone_detection"],
+    "notes": "Composite edit — background/foreground inconsistency signals.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t025",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Color Graded",
+    "url": "https://yavuzceliker.github.io/sample-images/image-900.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["color_distribution", "noise_pattern", "watermark_integrity"],
+    "notes": "Over-processed color grading — unnatural color distribution.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t026",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Landscape",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1000.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["clone_detection", "semantic_consistency", "texture_consistency"],
+    "notes": "Stylized landscape — test clone/tile detection in heavily processed scene.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t027",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Abstract Art",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1100.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["optical_anomalies", "contents_reality", "clone_detection"],
+    "notes": "Abstract stylized image — impossible geometry and hyper-symmetry.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t028",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Nature Composite",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1200.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["semantic_consistency", "lighting_analysis", "background_consistency"],
+    "notes": "Nature composite — mismatched lighting between layers.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t029",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Portrait (stylized)",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1300.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["facial_analysis", "texture_consistency", "noise_pattern"],
+    "notes": "Stylized portrait — smooth skin and artificial micro-detail.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t030",
+    "label": "ai_generated",
+    "category": "AI-Generated Art",
+    "sub_type": "AI Product / Commercial",
+    "url": "https://yavuzceliker.github.io/sample-images/image-1400.jpg",
+    "expected_verdict": "ai_generated",
+    "key_signals": ["shadow_analysis", "lighting_analysis", "optical_anomalies"],
+    "notes": "Product/commercial image — perfect studio lighting without sensor noise.",
+    "difficulty": "medium"
+  }
+]
