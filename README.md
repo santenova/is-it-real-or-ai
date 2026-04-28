@@ -78,6 +78,61 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ---
 
+## Prompt Flow
+
+
+**Modules and Structure**
+
+The codebase consists of several modules, each responsible for a specific aspect of the analysis:
+
+1. **`image-forensics.js`**: The main entry point of the tool.
+2. **`utils.js`**: Provides utility functions for image processing and analysis.
+3. **`text-analysis.js`**: Analyzes text and logo signals in the image.
+4. **`watermark-detection.js`**: Detects watermarks and steganographic signals in the image.
+5. **`exif-parser.js`**: Parses EXIF metadata from the image file.
+6. **`edge-detection.js`**: Analyzes edge detection artifacts in the image.
+
+**Analysis Flow**
+
+The analysis flow can be summarized as follows:
+
+1. Load the input image file and perform initial processing (e.g., resizing, converting to grayscale).
+2. Run text analysis using `text-analysis.js`.
+3. Run watermark detection using `watermark-detection.js`.
+4. Parse EXIF metadata using `exif-parser.js` and analyze it for inconsistencies.
+5. Analyze edge detection artifacts using `edge-detection.js`.
+6. Combine the results of each step to determine whether the image is real or AI-generated.
+
+**Output**
+
+The tool returns a JSON object containing the following fields:
+
+* `verdict`: Either "real" or "ai_generated", indicating the final verdict.
+* `confidence_score`: An overall authenticity score (0-100).
+* `analysis_summary`: A brief summary of the analysis, referencing specific objects or regions from the image context.
+* `reasoning`: A single sentence explaining why the tool declared the image real or AI-generated.
+* `breakdown`: An object containing all 26 scores and flags for each aspect of the analysis (e.g., texture consistency, lighting analysis).
+* `flagged_regions`: An array of suspicious areas in the image, including their position, size, category, and label.
+
+
+1. **Contextual analysis**: The analyst must consider the context in which the image was created, including the image type classification, paper trail, and watermark scan results.
+2. **Visual analysis**: The analyst must evaluate the image's visual characteristics, including texture, lighting, edges, noise, facial features, artifacts, geometry, color, and optical anomalies.
+3. **Metadata analysis**: The analyst must examine the image's metadata, including EXIF fields, timestamps, GPS, and camera model information.
+4. **Semantic consistency**: The analyst must assess whether the image's contents are logically consistent and realistic.
+5. **Internet presence**: The analyst must consider the image's presence on the internet, including its source, publication date, and any notable events or controversies surrounding its release.
+6. **Watermark integrity**: The analyst must evaluate the presence and authenticity of any watermarks or signature artifacts embedded in the image.
+7. **Breakdown scoring**: The analyst must assign scores to each of the 26 criteria, using a 0-100 scale to indicate the level of authenticity or AI-generatedness.
+
+The specification also outlines the requirements for the analyst's response, including:
+
+1. **Verdict**: The analyst must declare the image either "real" or "AI-generated", with no option for "inconclusive".
+2. **Confidence score**: The analyst must provide an overall authenticity score, using a 0-100 scale.
+3. **Analysis summary**: The analyst must provide a brief summary of their analysis, referencing specific objects or regions from the scene context.
+4. **Reasoning**: The analyst must provide a direct sentence explaining their verdict, citing the 1-3 most decisive signals that tipped the verdict.
+5. **Breakdown**: The analyst must provide an object containing all 26 scores, with each score using a 0-100 scale.
+6. **Flagged regions**: The analyst must identify 2-5 suspicious areas, with each region described using a specific category and label.
+
+
 ## Disclaimer
 
 Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use critical thinking and consider multiple factors when evaluating image authenticity.
