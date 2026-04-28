@@ -292,59 +292,51 @@ The following images are organized under the `images` directory. Each image has 
 
 [![Console Testing Single Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
 
-A single image used for console testing. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
-
-#### 2. Image Result Overview
-
 [![Image Result Overview](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
 
-Provides an overview of the results of various tests or experiments. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
+[![Landing Page Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
 
-#### 3. Test Directory
+The main landing page image used for the project's homepage. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
+
+#### 2. Test Directory
 
 The `test` directory contains several test-related images.
 
-##### 3.1 Fucked-Up Logo
+##### 2.1 Fucked-Up Logo
 
-[![Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
+[![Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png)
 
-A logo that appears to be broken or corrupted. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
+A logo that appears to be broken or corrupted. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/broken-logo.png)
 
-##### 3.2 Real 001 Photoshoot Text on Wall
+##### 2.2 Real 001 Photoshoot Text on Wall
 
 [![Real 001 Photoshoot Text on Wall](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
 
 A photograph of a real shoot with text on the wall. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
 
-##### 3.3 Trump Walker Gemini AI WebP
+##### 2.3 Trump Walker Gemini AI WebP
 
 [![Trump Walker Gemini AI WebP](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
 
 An image featuring Trump, Walker, and Gemini AI in a web format. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
 
-##### 3.4 Logo
+##### 2.4 Logo
 
 [![Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
 
 The main logo used across the project. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
 
-##### 3.5 Screenshot of Landscape Monoglype Photo
+##### 2.5 Screenshot of Landscape Monoglype Photo
 
 [![Screenshot of Landscape Monoglype Photo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
 
 A screenshot of a landscape photo featuring monoglype imagery. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
 
-##### 3.6 Crude Trump AI Portrait
+##### 2.6 Crude Trump AI Portrait
 
-[![Crude Trump AI Portrait](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
+[![Crude Trump AI Portrait](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trump-ai-portrait.jpg?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trump-ai-portrait.jpg)
 
-An image of a crude portrait of Donald Trump using AI. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
-
-#### 4. Landing Page Image
-
-[![Landing Page Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
-
-The main landing page image used for the project's homepage. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
+An image of a crude portrait of Donald Trump using AI. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trump-ai-portrait.jpg)
 
 ## Disclaimer
 
