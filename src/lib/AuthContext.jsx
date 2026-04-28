@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 function isLocalMode() {
   try {
-    const s = localStorage.getItem("verilens_settings");
+    const s = localStorage.getItem("aiorreal_settings");
     return s ? JSON.parse(s).local_mode === true : false;
   } catch {
     return false;

@@ -29,9 +29,6 @@ if (port) {
     result = formatString(template, hostname);
 }
 
-console.log(result);
-
-
 
 
 const DEFAULT_SETTINGS = {
@@ -57,13 +54,13 @@ const KNOWN_MODELS = [
 ];
 
 function loadSettings() {
-  const raw = localStorage.getItem("verilens_settings");
+  const raw = localStorage.getItem("aiorreal_settings");
   return raw ? { ...DEFAULT_SETTINGS, ...JSON.parse(raw) } : { ...DEFAULT_SETTINGS };
 }
 
 function saveSettings(patch) {
   const current = loadSettings();
-  localStorage.setItem("verilens_settings", JSON.stringify({ ...current, ...patch }));
+  localStorage.setItem("aiorreal_settings", JSON.stringify({ ...current, ...patch }));
 }
 
 export default function Settings() {

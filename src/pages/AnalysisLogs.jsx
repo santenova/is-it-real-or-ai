@@ -8,11 +8,11 @@ import { Badge } from "../components/ui/badge";
 import { Link } from "react-router-dom";
 
 const LS_SEGMENTS = [
-  { key: "verilens_analyses",     label: "Analysis History",   color: "text-violet-500 bg-violet-500/10 border-violet-500/20" },
-  { key: "verilens_analysis_logs",label: "Pipeline Sessions",  color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
-  { key: "verilens_errors",        label: "Error Log",          color: "text-red-500 bg-red-500/10 border-red-500/20" },
-  { key: "verilens_token_usage",   label: "Token Usage",        color: "text-green-500 bg-green-500/10 border-green-500/20" },
-  { key: "verilens_settings",      label: "Settings",           color: "text-amber-500 bg-amber-500/10 border-amber-500/20" },
+  { key: "aiorreal_analyses",     label: "Analysis History",   color: "text-violet-500 bg-violet-500/10 border-violet-500/20" },
+  { key: "aiorreal_analysis_logs",label: "Pipeline Sessions",  color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
+  { key: "aiorreal_errors",        label: "Error Log",          color: "text-red-500 bg-red-500/10 border-red-500/20" },
+  { key: "aiorreal_token_usage",   label: "Token Usage",        color: "text-green-500 bg-green-500/10 border-green-500/20" },
+  { key: "aiorreal_settings",      label: "Settings",           color: "text-amber-500 bg-amber-500/10 border-amber-500/20" },
 ];
 
 function readSegment(key) {
@@ -280,8 +280,8 @@ function SyncDiagnostics() {
   const [report, setReport] = useState(null);
 
   const compute = () => {
-    const analyses = listAnalyses();          // verilens_analyses
-    const sessions = getAllSessions();        // verilens_analysis_logs
+    const analyses = listAnalyses();          // aiorreal_analyses
+    const sessions = getAllSessions();        // aiorreal_analysis_logs
 
     const analysisById = Object.fromEntries(analyses.map((a) => [a.id, a]));
     const sessionByAnalysisId = Object.fromEntries(

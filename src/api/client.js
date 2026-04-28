@@ -2,7 +2,7 @@ import { appParams } from '../lib/app-params';
 
 function isLocalMode() {
   try {
-    const s = localStorage.getItem("verilens_settings");
+    const s = localStorage.getItem("aiorreal_settings");
     return s ? JSON.parse(s).local_mode === true : false;
   } catch {
     return false;
@@ -43,6 +43,81 @@ const localStub = {
   },
 };
 
+// Real API client implementation
+const realApiClient = {
+  auth: {
+    me: async () => null,
+    isAuthenticated: async () => false,
+    logout: () => {},
+    redirectToLogin: () => {},
+    updateMe: async () => {},
+  },
+  entities: new Proxy({}, {
+    get: () => new Proxy({}, {
+      get: () => async () => [],
+    }),
+  }),
+  integrations: {
+    Core: {
+      InvokeLLM: async () => { throw new Error("InvokeLLM not implemented"); },
+      UploadFile: async ({ file }) => {
+        // Simulate an API call to upload a file
+        try {
+          const response = await fetch(appParams.apiBaseUrl + '/upload', {
+            method: 'POST',
+            body: file,
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          return { file_url: data.file_url };
+        } catch (error) {
+          console.error('There has been a problem with your fetch operation:', error);
+          throw error;
+        }
+      },
+      SendEmail: async () => {},
+      GenerateImage: async () => {},
+      ExtractDataFromUploadedFile: async () => {},
+    },
+  },
+  functions: {
+    invoke: async () => {},
+  },
+  analytics: {
+    track: () => {},
+  },
+  users: {
+    inviteUser: async () => {},
+  },
+};
+
 const _local = isLocalMode();
 
-export const apiClient = _local ? localStub : localStub; 
+// Log the local mode status
+console.log("Running in local mode:", _local);
+
+// Dump localStorage as a table
+function dumpLocalStorageAsTable() {
+  const keys = Object.keys(localStorage);
+  if (keys.length === 0) {
+    console.log("localStorage is empty.");
+    return;
+  }
+
+  // Create a table header
+  let table = "| Key | Value |\n| --- | ----- |";
+  
+  // Add rows for each key-value pair
+  keys.forEach(key => {
+    const value = localStorage.getItem(key);
+    table += `\n| ${key} | ${value} |`;
+  });
+
+  console.log(table);
+}
+
+dumpLocalStorageAsTable();
+
+export const apiClient = _local ? localStub : realApiClient;

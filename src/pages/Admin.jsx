@@ -37,7 +37,7 @@ export default function Admin() {
       setUser(currentUser);
       
       // Load settings from localStorage (simple storage)
-      const saved = localStorage.getItem("verilens_settings");
+      const saved = localStorage.getItem("aiorreal_settings");
       if (saved) {
         setSettings(JSON.parse(saved));
       } else {
@@ -59,7 +59,7 @@ export default function Admin() {
   }, []);
 
   const handleSave = () => {
-    localStorage.setItem("verilens_settings", JSON.stringify(settings));
+    localStorage.setItem("aiorreal_settings", JSON.stringify(settings));
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };

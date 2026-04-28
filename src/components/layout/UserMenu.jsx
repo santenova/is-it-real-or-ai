@@ -22,7 +22,7 @@ export default function UserMenu() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const saved = localStorage.getItem("verilens_settings");
+    const saved = localStorage.getItem("aiorreal_settings");
     if (saved) {
       const settings = JSON.parse(saved);
       setQueueSleep(settings.queue_sleep_ms || 500);
@@ -32,9 +32,9 @@ export default function UserMenu() {
   const handleQueueSleepChange = (value) => {
     const numValue = parseInt(value) || 500;
     setQueueSleep(numValue);
-    const saved = localStorage.getItem("verilens_settings");
+    const saved = localStorage.getItem("aiorreal_settings");
     const settings = saved ? JSON.parse(saved) : {};
-    localStorage.setItem("verilens_settings", JSON.stringify({ ...settings, queue_sleep_ms: numValue }));
+    localStorage.setItem("aiorreal_settings", JSON.stringify({ ...settings, queue_sleep_ms: numValue }));
   };
 
   const handleLogout = async () => {

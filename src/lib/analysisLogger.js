@@ -1,5 +1,5 @@
 const MAX_SESSIONS = 30;
-const STORAGE_KEY = "verilens_analysis_logs";
+const STORAGE_KEY = "aiorreal_analysis_logs";
 
 export function createLogger() {
   const entries = [];
@@ -58,7 +58,7 @@ export function clearAllSessions() {
 }
 
 // ── Error log (replaces logAnalysisError entity) ──────────────────────────────
-const ERROR_KEY = "verilens_errors";
+const ERROR_KEY = "aiorreal_errors";
 const MAX_ERRORS = 50;
 
 export function logErrorLocally({ image_url, error, source_type }) {
@@ -74,7 +74,7 @@ export function logErrorLocally({ image_url, error, source_type }) {
 }
 
 // ── Token usage log (replaces logTokenUsage entity) ──────────────────────────
-const TOKEN_KEY = "verilens_token_usage";
+const TOKEN_KEY = "aiorreal_token_usage";
 const MAX_TOKEN_LOGS = 100;
 
 export function logTokenUsageLocally({ operation, tokens_used, image_url, verdict, user_email }) {

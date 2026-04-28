@@ -3,7 +3,7 @@
  * All data stays on-device — nothing is sent to or stored on the server.
  */
 
-const STORAGE_KEY = "verilens_analyses";
+const STORAGE_KEY = "aiorreal_analyses";
 
 function loadAll() {
   try {

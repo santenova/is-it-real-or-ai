@@ -51,7 +51,7 @@ async function waitForResult(beforeCount, timeoutMs = ANALYSIS_TIMEOUT_MS) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     await sleep(1500);
-    const entries = JSON.parse(localStorage.getItem('verilens_analyses') || '[]');
+    const entries = JSON.parse(localStorage.getItem('aiorreal_analyses') || '[]');
     if (entries.length > beforeCount) return entries[0]; // newest first
   }
   throw new Error(`Timeout after ${timeoutMs / 1000}s`);
@@ -113,7 +113,7 @@ export async function runTests(opts = {}) {
     const img = images[i];
     console.log(`[${i + 1}/${images.length}] ${img.id} (${img.label}) → ${img.url}`);
 
-    const beforeCount = JSON.parse(localStorage.getItem('verilens_analyses') || '[]').length;
+    const beforeCount = JSON.parse(localStorage.getItem('aiorreal_analyses') || '[]').length;
 
     try {
       await submitUrl(img.url);
@@ -154,8 +154,8 @@ export async function runTests(opts = {}) {
 
   const run = {
     timestamp: new Date().toISOString(),
-    model: localStorage.getItem('verilens_settings')
-      ? JSON.parse(localStorage.getItem('verilens_settings')).lms_model || 'cloud'
+    model: localStorage.getItem('aiorreal_settings')
+      ? JSON.parse(localStorage.getItem('aiorreal_settings')).lms_model || 'cloud'
       : 'cloud',
     results,
   };

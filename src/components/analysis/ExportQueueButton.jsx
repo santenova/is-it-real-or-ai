@@ -46,12 +46,12 @@ function exportCSV(rows) {
   const headers = Object.keys(rows[0]);
   const escape = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
   const csv = [headers.join(","), ...rows.map((r) => headers.map((h) => escape(r[h])).join(","))].join("\n");
-  download(new Blob([csv], { type: "text/csv" }), "verilens_report.csv");
+  download(new Blob([csv], { type: "text/csv" }), "aiorreal_report.csv");
 }
 
 function exportJSON(rows) {
   if (rows.length === 0) return;
-  download(new Blob([JSON.stringify(rows, null, 2)], { type: "application/json" }), "verilens_report.json");
+  download(new Blob([JSON.stringify(rows, null, 2)], { type: "application/json" }), "aiorreal_report.json");
 }
 
 function download(blob, filename) {
