@@ -72,7 +72,7 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 The codebase is organized into several modules, each responsible for specific aspects of the application. Here's a breakdown of the key components:
 
 ### **src/api/**
-- **client.js**: Manages API requests and responses. This module handles communication with external services or APIs, ensuring data retrieval and submission are handled efficiently.
+- **[client.js](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/src/api/client.js)**: Manages API requests and responses. This module handles communication with external services or APIs, ensuring data retrieval and submission are handled efficiently.
 
 ### **src/lib/**
 - **AuthContext.jsx**: Provides authentication context for managing user sessions and access control across the application.
@@ -101,7 +101,7 @@ The codebase is organized into several modules, each responsible for specific as
 
 ### Final Verdict
 
-After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from reverse search results, watermark detection, image type classification, scene analysis, and description verification.
+After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analysis stages.
 
 ```javascript
 const FINAL_VERDICT_PROMPT = `You are an expert image forensics analyst. Based on the following information:
@@ -120,7 +120,7 @@ Determine if this image is a real photograph or AI-generated.`;
 
 ## How It Works
 
-Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye but indicative of AI manipulation.
+Real or AI employs sophisticated visual forensics techniques to examine images in depth. By analyzing multiple aspects of the image, it identifies patterns that are often invisible to the human eye, helping determine authenticity with high precision.
 
 ---
 
@@ -194,7 +194,7 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ## Overview
 
-To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to the model server running on `http://localhost:11434`.
+To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to the backend API server.
 
 ## Configuration
 
@@ -224,13 +224,13 @@ export default {
 
 - **`changeOrigin`**: When set to `true`, this option changes the origin of the request to match the target URL. This is often necessary to bypass CORS restrictions on the server side.
 
-- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives only the intended endpoint (e.g., `/api/data`).
+- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives the correct request path.
 
 ## Important Notes
 
-- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the model server to allow requests from your frontend domain or using a reverse proxy.
+- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the target server to allow requests from your frontend domain.
 
-- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
+- **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose significant security risks.
 
 
 ---
@@ -286,7 +286,7 @@ The specification also outlines the requirements for the analyst's response, inc
 
 ## Disclaimer
 
-Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use critical thinking and consider multiple factors when evaluating image authenticity.
+Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always use this tool as part of a broader investigation and verification process.
 
 
 ---
