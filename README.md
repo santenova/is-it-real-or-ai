@@ -1,6 +1,3 @@
-correct and improve README.md  while simplyfing
-
-
 # Real or AI
 
 ## About Real or AI
@@ -101,7 +98,7 @@ The codebase is organized into several modules, each responsible for specific as
 
 ### Final Verdict
 
-After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analyses.
+After completing all the above steps, you will have a comprehensive understanding of the image's origin, authenticity, and characteristics. The final verdict should be based on the combined evidence from all analysis steps.
 
 ```javascript
 const FINAL_VERDICT_PROMPT = `You are an expert image forensics analyst. Based on the following information:
@@ -194,7 +191,7 @@ Each image is evaluated on these 26 criteria, scored individually from 0 to 100.
 
 ## Overview
 
-To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to your local Ollama API.
+To avoid Cross-Origin Resource Sharing (CORS) issues when making large language API calls from the frontend, we have set up an internal proxy using Vite's development server. This proxy forwards requests to your local model server (e.g., Ollama).
 
 ## Configuration
 
@@ -220,15 +217,15 @@ export default {
 
 - **`/proxy`**: This is the prefix that will be used in your frontend requests to indicate that they should be proxied. For example, a request to `/proxy/api/data` will be forwarded to `http://localhost:11434/api/data`.
 
-- **`target`**: The URL of the model server where the requests should be forwarded. In this case, it is set to `http://localhost:11434`. You may need to update this URL if your model server is hosted elsewhere.
+- **`target`**: The URL of the model server where the requests should be forwarded. In this case, it is set to `http://localhost:11434`. You may need to update this URL if your model server is hosted on a different machine or port.
 
 - **`changeOrigin`**: When set to `true`, this option changes the origin of the request to match the target URL. This is often necessary to bypass CORS restrictions on the server side.
 
-- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives the original path.
+- **`rewrite`**: This function rewrites the path of the request before it is sent to the target server. In this case, it removes the `/proxy` prefix from the path, so that the model server receives requests in the expected format.
 
 ## Important Notes
 
-- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the server to accept requests from your frontend domain.
+- **Development Only**: This proxy setup is intended for use during local development. For production environments, you may need a different approach to handle CORS issues, such as configuring the server-side CORS headers or using a dedicated backend proxy.
 
 - **Security Considerations**: Ensure that the target URL (`http://localhost:11434` in this example) is secure and accessible only within your internal network. Exposing sensitive APIs to external networks can pose security risks.
 
@@ -293,13 +290,15 @@ The following images are organized under the `images` directory. Each image has 
 
 #### 1. Console Testing Single Image
 
-- **Description**: A single image used for console testing.
-- **Location**: [Console Testing Single Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
+[![Console Testing Single Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
+
+A single image used for console testing. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/console-testing-single-image.png)
 
 #### 2. Image Result Overview
 
-- **Description**: Provides an overview of the results of various tests or experiments.
-- **Location**: [Image Result Overview](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
+[![Image Result Overview](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
+
+Provides an overview of the results of various tests or experiments. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/image-result-overview.png)
 
 #### 3. Test Directory
 
@@ -307,42 +306,48 @@ The `test` directory contains several test-related images.
 
 ##### 3.1 Fucked-Up Logo
 
-- **Description**: A logo that appears to be broken or corrupted.
-- **Location**: [Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
+[![Fucked-Up Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
+
+A logo that appears to be broken or corrupted. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/fucked-up-logo.png)
 
 ##### 3.2 Real 001 Photoshoot Text on Wall
 
-- **Description**: A photograph of a real shoot with text on the wall.
-- **Location**: [Real 001 Photoshoot Text on Wall](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
+[![Real 001 Photoshoot Text on Wall](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
+
+A photograph of a real shoot with text on the wall. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/real-001-photoshoot-text-on-wall.png)
 
 ##### 3.3 Trump Walker Gemini AI WebP
 
-- **Description**: An image featuring Trump, Walker, and Gemini AI in a web format.
-- **Location**: [Trump Walker Gemini AI WebP](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
+[![Trump Walker Gemini AI WebP](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
+
+An image featuring Trump, Walker, and Gemini AI in a web format. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/trump_walker_gemini_ai.webp)
 
 ##### 3.4 Logo
 
-- **Description**: The main logo used across the project.
-- **Location**: [Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
+[![Logo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
+
+The main logo used across the project. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/logo.png)
 
 ##### 3.5 Screenshot of Landscape Monoglype Photo
 
-- **Description**: A screenshot of a landscape photo featuring monoglype imagery.
-- **Location**: [Screenshot of Landscape Monoglype Photo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
+[![Screenshot of Landscape Monoglype Photo](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
+
+A screenshot of a landscape photo featuring monoglype imagery. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/screenshot-of-landacape-monoglype-photo.jpeg)
 
 ##### 3.6 Crude Trump AI Portrait
 
-- **Description**: An image of a crude portrait of Donald Trump using AI.
-- **Location**: [Crude Trump AI Portrait](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
+[![Crude Trump AI Portrait](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
+
+An image of a crude portrait of Donald Trump using AI. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/test/crude-trup-ai-portrait.jpg)
 
 #### 4. Landing Page Image
 
-- **Description**: The main landing page image used for the project's homepage.
-- **Location**: [Landing Page Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
+[![Landing Page Image](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png?w=200)](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
+
+The main landing page image used for the project's homepage. [View full resolution](https://raw.githubusercontent.com/santenova/is-it-real-or-ai/refs/heads/main/images/landing.png)
 
 ## Disclaimer
 
-Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always verify critical findings through additional methods or professional human review when stakes are high.
-
+Real or AI offers AI-powered analysis as a helpful tool, but results should not be considered definitive proof. AI detection technology is continuously evolving, and no system is 100% accurate. Always verify findings with additional sources when making important decisions.
 
 ---
