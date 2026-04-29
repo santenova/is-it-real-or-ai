@@ -71,7 +71,7 @@ const DESCRIPTION_VERDICT_PROMPT = (description) => `You are an expert image for
 The codebase is organized into several modules, each responsible for specific aspects of the application. Here's a breakdown of the key components:
 
 ### **src/api/**
-- **[client.js](src/api/client.js)**: Manages API requests and responses. This module handles communication with external services.
+- **[client.js](src/apis/client.js)**: Manages API requests and responses. This module handles communication with external services.
 
 ### **src/lib/**
 - **[AuthContext.jsx](src/lib/AuthContext.jsx)**: Provides authentication context for managing user sessions and access control across the application.

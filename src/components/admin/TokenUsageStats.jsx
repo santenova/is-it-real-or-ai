@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { apiClient } from "../../api/client";
+import { apiClient } from "../../apis/client";
 import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { Zap, TrendingUp } from "lucide-react";

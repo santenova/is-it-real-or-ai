@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiClient } from "../api/client";
+import { apiClient } from "../apis/client";
 import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, TrendingUp, AlertCircle, Search } from "lucide-react";

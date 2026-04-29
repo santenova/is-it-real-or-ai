@@ -5,7 +5,7 @@ import exifr from "exifr";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Sparkles, ScanEye, Link as LinkIcon, Terminal } from "lucide-react";
 import { motion } from "framer-motion";
-import { apiClient } from "../api/client";
+import { apiClient } from "../apis/client";
 import MultiImageDropzone from "../components/analysis/MultiImageDropzone";
 import QueueProgress from "../components/analysis/QueueProgress";
 import AnalysisResult from "../components/analysis/AnalysisResult";

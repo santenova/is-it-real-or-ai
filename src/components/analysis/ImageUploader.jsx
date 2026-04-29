@@ -4,7 +4,7 @@ import { Input } from "../../components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 import { Upload, Link as LinkIcon, X, ImageIcon, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { apiClient } from "./api/client";
+import { apiClient } from "./apis/client";
 
 export default function ImageUploader({ onAnalyze, isAnalyzing }) {
   const [tab, setTab] = useState("upload");

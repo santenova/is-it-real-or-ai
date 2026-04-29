@@ -6,7 +6,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Settings as SettingsIcon, Moon, Sun, Sliders, CheckCircle, Server, LogIn, WifiOff } from "lucide-react";
 import { motion } from "framer-motion";
-import { apiClient } from "../api/client";
+import { apiClient } from "../apis/client";
 
 const port = window.location.port;
 const hostname = window.location.hostname;
