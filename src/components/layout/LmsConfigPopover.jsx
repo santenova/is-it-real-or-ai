@@ -43,14 +43,14 @@ const KNOWN_MODELS = [
 ];
 
 function load() {
-  const raw = localStorage.getItem("aiorreal_settings");
+  const raw = localStorage.getItem(prefix + "_settings");
   const saved = raw ? JSON.parse(raw) : {};
   return { ...DEFAULT, ...saved };
 }
 
 function save(patch) {
   const current = load();
-  localStorage.setItem("aiorreal_settings", JSON.stringify({ ...current, ...patch }));
+  localStorage.setItem(prefix + "_settings", JSON.stringify({ ...current, ...patch }));
 }
 
 export default function LmsConfigPopover() {

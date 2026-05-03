@@ -840,9 +840,9 @@ async function runAnalysis(imageUrlParam, sourceType, exifData = null, imageDime
   const sessionId = saveSession(imageUrl, logger.getLogs(), saved.id);
 
   // Patch the stored record with the session_id back-reference
-  const all = (() => { try { return JSON.parse(localStorage.getItem("aiorreal_analyses") || "[]"); } catch { return []; } })();
+  const all = (() => { try { return JSON.parse(localStorage.getItem(prefix + "_analyses") || "[]"); } catch { return []; } })();
   const idx = all.findIndex((r) => r.id === saved.id);
-  if (idx !== -1) { all[idx].session_id = sessionId; localStorage.setItem("aiorreal_analyses", JSON.stringify(all)); }
+  if (idx !== -1) { all[idx].session_id = sessionId; localStorage.setItem(prefix + "_analyses", JSON.stringify(all)); }
 
   return { ...saved, session_id: sessionId };
 }
@@ -863,7 +863,7 @@ export default function Home() {
 
   const processItems = async (newItems, userSettings = null) => {
     // Load settings from localStorage
-    const saved = localStorage.getItem("aiorreal_settings");
+    const saved = localStorage.getItem(prefix + "_settings");
     const currentSettings = saved ? JSON.parse(saved) : {};
     const sleepMs = currentSettings.queue_sleep_ms || 500;
     
@@ -947,7 +947,7 @@ export default function Home() {
     
     try {
       // Load settings from localStorage
-      const saved = localStorage.getItem("aiorreal_settings");
+      const saved = localStorage.getItem(prefix + "_settings");
       const currentSettings = saved ? JSON.parse(saved) : {};
       const sleepMs = currentSettings.queue_sleep_ms || 500;
       

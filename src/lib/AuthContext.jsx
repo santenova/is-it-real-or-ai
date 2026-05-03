@@ -2,11 +2,14 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios'; // Import axios directly
 import { appParams } from './app-params';
 
+
+const prefix   = appParams.appPrefix;
+const STORAGE_KEY = prefix + "_analysis_logs";
 const AuthContext = createContext();
 
 function isLocalMode() {
   try {
-    const s = localStorage.getItem("aiorreal_settings");
+    const s = localStorage.getItem("aiorreal/_settings");
     return s ? JSON.parse(s).local_mode === true : false;
   } catch {
     return false;

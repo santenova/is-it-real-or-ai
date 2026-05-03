@@ -1,8 +1,10 @@
+import { appParams } from '../../lib/app-params';
+
+
+const prefix   = appParams.appPrefix;
+
 /**
  * Retrieves an access token from URL parameters or local storage.
- *
- * Low-level utility for manually retrieving tokens. In most cases, the Base44 client handles
- * token management automatically. This function is useful for custom authentication flows or when you need direct access to stored tokens. Requires a browser environment and can't be used in the backend.
  *
  * @internal
  *
@@ -35,7 +37,7 @@
  * ```
  */
 export function getAccessToken(options = {}) {
-    const { storageKey = "aiorreal_access_token", paramName = "access_token", saveToStorage = true, removeFromUrl = true, } = options;
+    const { storageKey = prefix + "_access_token", paramName = "access_token", saveToStorage = true, removeFromUrl = true, } = options;
     let token = null;
     // Try to get token from URL parameters
     if (typeof window !== "undefined" && window.location) {
@@ -104,7 +106,7 @@ export function getAccessToken(options = {}) {
  * ```
  */
 export function saveAccessToken(token, options) {
-    const { storageKey = "aiorreal_access_token" } = options;
+    const { storageKey = prefix + "_access_token" } = options;
     if (typeof window === "undefined" || !window.localStorage || !token) {
         return false;
     }
@@ -144,7 +146,7 @@ export function saveAccessToken(token, options) {
  * ```
  */
 export function removeAccessToken(options) {
-    const { storageKey = "aiorreal_access_token" } = options;
+    const { storageKey = prefix + "_access_token" } = options;
     if (typeof window === "undefined" || !window.localStorage) {
         return false;
     }

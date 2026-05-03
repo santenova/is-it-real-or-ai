@@ -54,13 +54,13 @@ const KNOWN_MODELS = [
 ];
 
 function loadSettings() {
-  const raw = localStorage.getItem("aiorreal_settings");
+  const raw = localStorage.getItem(prefix + "_settings");
   return raw ? { ...DEFAULT_SETTINGS, ...JSON.parse(raw) } : { ...DEFAULT_SETTINGS };
 }
 
 function saveSettings(patch) {
   const current = loadSettings();
-  localStorage.setItem("aiorreal_settings", JSON.stringify({ ...current, ...patch }));
+  localStorage.setItem(prefix + "_settings", JSON.stringify({ ...current, ...patch }));
 }
 
 export default function Settings() {

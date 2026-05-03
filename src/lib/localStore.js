@@ -2,8 +2,12 @@
  * Local-storage backed store for ImageAnalysis records.
  * All data stays on-device — nothing is sent to or stored on the server.
  */
+import { appParams } from './app-params';
+const prefix = appParams.appPrefix
 
-const STORAGE_KEY = "aiorreal_analyses";
+
+
+const STORAGE_KEY = prefix+"_analyses";
 
 function loadAll() {
   try {

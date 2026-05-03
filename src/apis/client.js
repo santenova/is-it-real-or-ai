@@ -66,7 +66,8 @@ function createAxiosClient({ baseURL, headers, token, interceptResponses }) {
 
 function isLocalMode() {
   try {
-    const s = localStorage.getItem("aiorreal_settings");
+
+    const s = localStorage.getItem(prefix + "_settings");
     return s ? JSON.parse(s).local_mode === true : false;
   } catch {
     return false;

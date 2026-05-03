@@ -1,7 +1,7 @@
 import { apiClient, createClientFromRequest } from "./apis/client";
 Deno.serve(async (req) => {
     try {
-        const base44 = createClientFromRequest(req);
+        const apiClient = createClientFromRequest(req);
         const { imageUrl } = await req.json();
         if (!imageUrl) {
             return Response.json({ error: 'Image URL required' }, { status: 400 });

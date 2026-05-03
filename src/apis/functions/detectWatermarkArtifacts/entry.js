@@ -1,5 +1,6 @@
-import { createClientFromRequest } from 'npm:@base44/sdk@0.8.23';
-// Known AI generator watermark patterns to check for
+import { apiClient, createClientFromRequest } from "./apis/client";
+
+
 const WATERMARK_PROMPT = `You are a specialized AI watermark and signature artifact detector. Analyze this image carefully for the following specific signals:
 
 INVISIBLE/STEGANOGRAPHIC WATERMARKS:
@@ -43,7 +44,7 @@ const WATERMARK_SCHEMA = {
 };
 Deno.serve(async (req) => {
     try {
-        const base44 = createClientFromRequest(req);
+        const apiClient = createClientFromRequest(req);
         const { imageUrl } = await req.json();
         if (!imageUrl) {
             return Response.json({ error: 'imageUrl required' }, { status: 400 });

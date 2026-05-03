@@ -1,3 +1,10 @@
+import { appParams } from '../../lib/app-params';
+
+
+const prefix   = appParams.appPrefix;
+
+
+
 function isInsideIframe() {
     if (typeof window === "undefined")
         return false;
@@ -18,7 +25,9 @@ function loginViaPopup(url, redirectUrl, expectedOrigin) {
     const height = 600;
     const left = Math.round(window.screenX + (window.outerWidth - width) / 2);
     const top = Math.round(window.screenY + (window.outerHeight - height) / 2);
-    const popup = window.open(url, "base44_auth", `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`);
+    
+    
+    const popup = window.open(url, lower_prefix+"_auth", `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`);
     if (!popup) {
         return;
     }

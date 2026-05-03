@@ -3,6 +3,7 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from './lib/query-client'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
+import { appParams } from './lib/app-params';
 import { AuthProvider, useAuth } from './lib/AuthContext';
 import { ThemeProvider } from './lib/ThemeContext';
 import UserNotRegisteredError from './components/UserNotRegisteredError';
@@ -16,9 +17,12 @@ import BrowserPlugin from './pages/BrowserPlugin';
 import Settings from './pages/Settings';
 import AnalysisLogs from './pages/AnalysisLogs';
 
+const prefix = appParams.appPrefix
+
+const STORAGE_KEY = prefix + "_settings"
 function isLocalMode() {
   try {
-    const s = localStorage.getItem("aiorreal_settings");
+    const s = localStorage.getItem(STORAGE_KEY);
     return s ? JSON.parse(s).local_mode === true : false;
   } catch {
     return false;
